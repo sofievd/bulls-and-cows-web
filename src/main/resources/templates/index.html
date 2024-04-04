@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulls and Cows</title>
+</head>
+<body>
+<div class="homepage">
+    <h2 id="header" th:align="center">Bulls and Cows</h2>
+    <div>
+        <h3 th:align="center">
+            Game Rules
+        </h3>
+        <p th:align="center">
+            the game rules are....
+        </p>
+    </div>
+
+    <div>
+        <br><br>
+        <a class="greenbutton" href="/game" th:href="@{/startGame}"><b>Start Game</b></a>
+    </div>
+</div>
+</body>
+</html>
