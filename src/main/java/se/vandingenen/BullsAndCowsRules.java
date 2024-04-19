@@ -8,15 +8,12 @@ import org.springframework.web.context.annotation.SessionScope;
 import java.util.*;
 
 @Component
-@SessionScope
 public class BullsAndCowsRules {
-    private int numberOfGuesses = 0;
-    private HashMap<Integer, String> guessResultMap;
+    private int numberOfGuesses = 1;
     private String secret;
 
     @PostConstruct
     public void newGame(){
-        guessResultMap = new HashMap<>();
         secret = generateNumberOrWord();
     }
 
@@ -27,7 +24,7 @@ public class BullsAndCowsRules {
      *
      * @return a 4-digit number with different digits and of type String
      */
-    private String generateNumberOrWord() {
+    public String generateNumberOrWord() {
         List<Integer> digits = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 0));
         Collections.shuffle(digits);
 
@@ -87,21 +84,6 @@ public class BullsAndCowsRules {
         return result;
     }
 
-    public String makeGuess(int guess){
-        String guessString = ""+ guess;
-        GuessEvaluation evaluation;
-        String result;
-        evaluation = checkResult(guessString);
-        result = showResult(evaluation);
-        addResultAndGuess(guess, result);
-
-        if(isFinished(evaluation)){
-            return "wrong, try again";
-        }else {
-            newGame();
-            return "correct, new game!";
-        }
-    }
     /**
      * Returns a boolean depending upon whether the given argument matches the final goal (i.e. "BBBB,").
      * Note that if the argument does not match the final goal, the number of guesses increase by 1.
@@ -125,14 +107,6 @@ public class BullsAndCowsRules {
      */
     public int getNumberOfGuesses() {
         return numberOfGuesses;
-    }
-
-    public void addResultAndGuess(int guess, String result){
-        guessResultMap.put(guess, result);
-    }
-
-    public Map<Integer, String> getMap(){
-        return guessResultMap;
     }
     public String getSecret(){
         return secret;

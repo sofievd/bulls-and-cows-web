@@ -7,29 +7,37 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Map;
+import java.util.ArrayList;
 
 @Controller
 public class GameController {
     @Autowired
-    BullsAndCowsRules rules;
+    GameService service;
 
     @GetMapping("/")
-    public String showStartPage(){
+    public String showStartPage() {
         return "index";
     }
+
     @GetMapping("/startGame")
-    public String showGame(){
+    public String showGame() {
         return "game";
     }
-    @PostMapping("/game")
-    public String startGame(Model model, @RequestParam("input") int guess){
-        Map<Integer, String > resultMap = rules.getMap();
-        String result = rules.makeGuess(guess);
 
-        model.addAttribute("resultMap", resultMap);
-        model.addAttribute("nGuesses", rules.getNumberOfGuesses());
-        model.addAttribute("result", result);
+    @PostMapping("/game")
+    public String startGame(Model model, @RequestParam("input") String guess) {
+        ArrayList<GuessItem> list = service.getGuessResultNumofGueses();
+        String resultToShow = service.makeGuess(guess);
+
+        model.addAttribute("result", resultToShow);
+        model.addAttribute("resultList", list);
+
+        return "game";
+    }
+
+    @GetMapping("/startNewGame")
+    public String startNewGame() {
+        service.startNewGame();
         return "game";
     }
 }
