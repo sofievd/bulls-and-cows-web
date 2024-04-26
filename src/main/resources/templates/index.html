@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Bulls and Cows</title>
+    <link th:href="@{/style.css}" rel="stylesheet">
 </head>
 <body>
 <div class="homepage">
     <h2 id="header" th:align="center">Bulls and Cows</h2>
+    <div>
+        <a class="greenbutton"  th:href="@{/register}"><b>Register</b></a>
+
+    </div>
+    <div>
+        <a class="greenbutton" href="registration-form.html"><b>Login</b></a>
+
+    </div>
     <div>
         <h3 th:align="center">
             Game Rules
@@ -15,9 +24,8 @@
             the game rules are....
         </p>
     </div>
-
+    <br><br>
     <div>
-        <br><br>
         <a class="greenbutton" href="/game" th:href="@{/startGame}"><b>Start Game</b></a>
     </div>
 </div>

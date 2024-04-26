@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>bulls and Cows - Sign Up</title>
+</head>
+<body>
+<div class="body-box">
+    <h2> Sign Up</h2>
+    <form th:action="@{/register/save}" method="post">
+        User name: <input type="text" name="name" > <br>
+        Password <input type="text" name="password">
+       <!-- <div>
+            User email (*): <input type="email" th:field="*{email}"/>
+
+            &lt;!&ndash; Add error message (if present) &ndash;&gt;
+            <span th:if="${#fields.hasErrors('email')}"
+                  th:errors="*{email}"
+                  class="error"></span>
+
+            <br><br>
+        </div>
+
+        Password (*): <input type="password" th:field="*{password}"/>
+
+        &lt;!&ndash; Add error message (if present) &ndash;&gt;
+        <span th:if="${#fields.hasErrors('password')}"
+              th:errors="*{password}"
+              class="error"></span>
+
+        <br><br><br>-->
+
+        <button type="submit">Register</button>
+
+<!--        <input type="submit" value="register">-->
+    </form>
+    <span th:text="${message}"></span>
+</div>
+</body>
+</html>

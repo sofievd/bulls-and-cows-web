@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulls and Cows</title>
+    <link th:href="@{/style.css}" rel="stylesheet">
+</head>
+<body>
+<div class= "body-box">
+    <h3> Guess the number!</h3>
+    <div>
+        <span th:text="${game}"></span>
+        <div class="form-box">
+            <form th:action="@{/game}" method="post">
+                <input type="text" name="number">
+                <input type="submit" value="input">
+            </form>
+            <span th:align="center" th:text="${result}"></span>
+        </div>
+
+        </br>
+        </br>
+        <div th:if="'correct!' == ${result}">
+            <i><b><a class="greenbutton" href="/game" th:href="@{/startNewGame}"><b>New Game!</b></a></b></i>
+        </div>
+
+    </div>
+    <div>
+        <h4>your guesses</h4>
+        <dl th:each="item :${resultList}">
+            <dt>guess number: <span th:text="${item.numOfGuesses}"></span></dt>
+            <dd>Guess: <span th:text="${item.guess}"></span></dd>
+            <dd>Result: <span th:text="${item.result}"></span></dd>
+        </dl>
+
+    </div>
+</div>
+</body>
+</html>
