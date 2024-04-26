@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+   }
+
+h3 {
+    color: #333;
+}
+.homepage{
+    width: 80%; /* Adjust the width as per your requirement */
+    margin: 0 auto; /* Center the box horizontally */
+    padding: 20px; /* Add padding for spacing inside the box */
+    border-radius: 8px; /* Add rounded corners to the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+.body-box{
+    width: 80%; /* Adjust the width as per your requirement */
+    margin: 0 auto; /* Center the box horizontally */
+    padding: 20px; /* Add padding for spacing inside the box */
+    border-radius: 8px; /* Add rounded corners to the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+.form-box {
+    width: 80%; /* Adjust the width as per your requirement */
+    max-width: 600px; /* Set a maximum width to ensure it doesn't get too wide on larger screens */
+    margin: 0 auto; /* Center the box horizontally */
+    padding: 20px; /* Add padding for spacing inside the box */
+    border: 1px solid #ccc; /* Add a border for the box */
+    border-radius: 8px; /* Add rounded corners to the box */
+    background-color: #f9f9f9; /* Set a background color for the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+div {
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="submit"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+dl {
+    margin: 0;
+    padding: 0;
+}
+
+dt {
+    font-weight: bold;
+}
+
+.greenbutton {
+    align-content: center;
+    color: #fff;
+    background-color: #28a745;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.greenbutton:hover {
+    background-color: #218838;
+}
