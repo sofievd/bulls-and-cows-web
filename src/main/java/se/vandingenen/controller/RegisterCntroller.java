@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,8 +26,8 @@ public class RegisterCntroller {
     }
 
     @PostMapping("/register/save")
-    public String saveUser(@RequestParam("name") String name, @RequestParam("password") String password, Model model){
-        if(playerService.userNameExists(name)){
+    public String saveUser(@RequestParam("name") String name, @RequestParam("password") String password, Model model ){
+        if(playerService.usernameExists(name)){
             String message = "username already exists, choose another username!";
             model.addAttribute("message", message);
             return "registration-form";
