@@ -1,15 +1,12 @@
 package se.vandingenen.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import se.vandingenen.PlayerService;
+import se.vandingenen.service.PlayerService;
 
 @Controller
 public class RegisterCntroller {
@@ -22,7 +19,7 @@ public class RegisterCntroller {
 
     @GetMapping("/register")
     public String showForm(){
-        return "registration-form";
+        return "registration/registration-form";
     }
 
     @PostMapping("/register/save")
@@ -30,11 +27,11 @@ public class RegisterCntroller {
         if(playerService.usernameExists(name)){
             String message = "username already exists, choose another username!";
             model.addAttribute("message", message);
-            return "registration-form";
+            return "registration/registration-form";
         }
         else {
             playerService.register(name, password);
-            return "game";
+            return "game/game";
         }
     }
 }

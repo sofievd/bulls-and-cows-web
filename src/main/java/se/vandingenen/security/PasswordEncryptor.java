@@ -1,4 +1,4 @@
-package se.vandingenen;
+package se.vandingenen.security;
 
 import org.mindrot.jbcrypt.BCrypt;
 
