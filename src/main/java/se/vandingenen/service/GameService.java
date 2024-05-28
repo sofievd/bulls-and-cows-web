@@ -1,11 +1,12 @@
-package se.vandingenen;
+package se.vandingenen.service;
 
-import com.sun.source.tree.Tree;
 import jakarta.annotation.PostConstruct;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
+import se.vandingenen.BullsAndCowsGame.BullsAndCowsRules;
+import se.vandingenen.BullsAndCowsGame.GuessEvaluation;
+import se.vandingenen.BullsAndCowsGame.GuessItem;
 
 import java.util.*;
 
@@ -61,4 +62,5 @@ public class GameService{
     public void setGuessResultNumofGueses(ArrayList<GuessItem> guessResultNumofGueses) {
         this.guessResultNumofGueses = guessResultNumofGueses;
     }
+
 }

@@ -1,9 +1,7 @@
-package se.vandingenen;
+package se.vandingenen.BullsAndCowsGame;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.*;
 

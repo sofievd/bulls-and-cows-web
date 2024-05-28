@@ -1,4 +1,4 @@
-package se.vandingenen;
+package se.vandingenen.BullsAndCowsGame;
 /**
  * @param valueCountAtCorrectPlace   This saves the number of digits/letters at the correct position in the number/word
  *                                   guessed by the player.

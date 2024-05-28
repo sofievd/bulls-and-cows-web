@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Bulls and Cows</title>
-    <link th:href="@{/style.css}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
 </head>
 <body>
 <div class= "body-box">
@@ -11,7 +11,7 @@
     <div>
         <span th:text="${game}"></span>
         <div class="form-box">
-            <form th:action="@{/game}" method="post">
+            <form th:action="@{/templates/game}" method="post">
                 <input type="text" name="number">
                 <input type="submit" value="input">
             </form>

@@ -1,4 +1,4 @@
-package se.vandingenen;
+package se.vandingenen.BullsAndCowsGame;
 
 public class GuessItem {
     private int numOfGuesses;
